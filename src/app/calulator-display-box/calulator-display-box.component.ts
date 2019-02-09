@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CalculateService } from '../calculate/calculate.service';
 
 @Component({
   selector: 'app-calulator-display-box',
@@ -6,9 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./calulator-display-box.component.css']
 })
 export class CalulatorDisplayBoxComponent implements OnInit {
-  @Input() displayValue;
+  displayValue;
 
-  constructor() { }
+  constructor(private calculateService: CalculateService) {
+    this.displayValue = calculateService.displayValue;
+    calculateService.updateDisplayValueListenner().subscribe(newDisplayValue => {
+      this.displayValue = newDisplayValue;
+    });
+  }
 
   ngOnInit() {
   }

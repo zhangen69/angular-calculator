@@ -7,14 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CalculatorComponent implements OnInit {
   @Input() title;
-  displayValue = '0';
 
   constructor() {}
 
   ngOnInit() {}
-
-  updateValue(value: string) {
-    this.displayValue = value;
-  }
 
 }

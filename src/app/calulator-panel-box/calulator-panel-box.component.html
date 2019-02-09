@@ -1,0 +1,49 @@
+<div class="panel-box">
+  <mat-grid-list
+    class="number-panel"
+    cols="4"
+    rowHeight="9:1"
+    gutterSize="1rem"
+  >
+    <mat-grid-tile-header>
+      <mat-grid-tile colspan="4" (click)="clear()">CLEAR</mat-grid-tile>
+    </mat-grid-tile-header>
+    <mat-grid-tile (click)="addNumber(7)">7</mat-grid-tile>
+    <mat-grid-tile (click)="addNumber(8)">8</mat-grid-tile>
+    <mat-grid-tile (click)="addNumber(9)">9</mat-grid-tile>
+    <mat-grid-tile (click)="addOperator('÷')" class="operator-items"
+      >÷</mat-grid-tile
+    >
+    <mat-grid-tile (click)="addNumber(4)">4</mat-grid-tile>
+    <mat-grid-tile (click)="addNumber(5)">5</mat-grid-tile>
+    <mat-grid-tile (click)="addNumber(6)">6</mat-grid-tile>
+    <mat-grid-tile (click)="addOperator('x')" class="operator-items"
+      >x</mat-grid-tile
+    >
+    <mat-grid-tile (click)="addNumber(1)">1</mat-grid-tile>
+    <mat-grid-tile (click)="addNumber(2)">2</mat-grid-tile>
+    <mat-grid-tile (click)="addNumber(3)">3</mat-grid-tile>
+    <mat-grid-tile (click)="addOperator('-')" class="operator-items"
+      >-</mat-grid-tile
+    >
+    <mat-grid-tile-footer>
+      <mat-grid-tile (click)="addNumber(0)">0</mat-grid-tile>
+      <mat-grid-tile (click)="addNumber('.')">.</mat-grid-tile>
+      <mat-grid-tile
+        (click)="calulate()"
+        style="background-color: #0067ff; color: #ffffff;"
+        >=</mat-grid-tile
+      >
+      <mat-grid-tile (click)="addOperator('+')" class="operator-items"
+        >+</mat-grid-tile
+      >
+    </mat-grid-tile-footer>
+  </mat-grid-list>
+  <mat-grid-list
+    class="operator-panel"
+    cols="3"
+    rowHeight="9:1"
+    gutterSize="1rem"
+  >
+  </mat-grid-list>
+</div>
